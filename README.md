@@ -64,7 +64,7 @@ Replace the empty cells with your own referral links before you point people at 
 | --- | --- |
 | Honeygain | https://join.honeygain.com/SPARE2A1D9 |
 | EarnApp | https://earnapp.com/i/HsxU2Bnd |
-| Pawns | |
+| Pawns | https://pawns.app/?r=3040658 |
 | PacketStream | https://packetstream.io/?psr=5wim |
 | TraffMonetizer | |
 | Repocket | |
