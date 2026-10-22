@@ -1,0 +1,135 @@
+# One instance of each app, on this computer's own internet connection.
+# Select apps with Compose profiles: docker compose --profile honeygain up -d
+
+services:
+  honeygain:
+    profiles: ["honeygain"]
+    image: honeygain/honeygain
+    container_name: honeygain
+    restart: always
+    command:
+      - -tou-accept
+      - -email
+      - ${HONEYGAIN_EMAIL}
+      - -pass
+      - ${HONEYGAIN_PASSWORD}
+      - -device
+      - ${DEVICE_NAME}-honeygain
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  pawns:
+    profiles: ["pawns"]
+    image: iproyal/pawns-cli:latest
+    container_name: pawns
+    restart: always
+    command:
+      - -email=${PAWNS_EMAIL}
+      - -password=${PAWNS_PASSWORD}
+      - -device-name=${DEVICE_NAME}-pawns
+      - -device-id=${DEVICE_NAME}-pawns
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  packetstream:
+    profiles: ["packetstream"]
+    image: packetstream/psclient:latest
+    container_name: packetstream
+    restart: always
+    environment:
+      CID: ${PACKETSTREAM_CID}
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  traffmonetizer:
+    profiles: ["traffmonetizer"]
+    image: traffmonetizer/cli_v2:latest
+    container_name: traffmonetizer
+    restart: always
+    command:
+      - start
+      - accept
+      - --token
+      - ${TRAFFMONETIZER_TOKEN}
+      - --device-name
+      - ${DEVICE_NAME}-traffmonetizer
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  repocket:
+    profiles: ["repocket"]
+    image: repocket/repocket:latest
+    container_name: repocket
+    restart: always
+    environment:
+      RP_API_KEY: ${REPOCKET_API_KEY}
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  mysterium:
+    profiles: ["mysterium"]
+    image: mysteriumnetwork/myst
+    container_name: mysterium
+    restart: always
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    command:
+      - service
+      - --agreed-terms-and-conditions
+    volumes:
+      - mysterium-data:/var/lib/mysterium-node
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  bitping:
+    profiles: ["bitping"]
+    image: bitping/bitpingd:latest
+    container_name: bitping
+    restart: always
+    environment:
+      BITPING_EMAIL: ${BITPING_EMAIL}
+      BITPING_PASSWORD: ${BITPING_PASSWORD}
+    volumes:
+      - bitping-data:/root/.bitpingd
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  antgain:
+    profiles: ["antgain"]
+    image: pinors/antgain-cli:latest
+    container_name: antgain
+    restart: always
+    stop_grace_period: 30s
+    environment:
+      ANTGAIN_API_KEY: ${ANTGAIN_API_KEY}
+      TZ: ${TZ:-Australia/Sydney}
+    volumes:
+      - antgain-data:/data/.antgain
+    healthcheck:
+      test: ["CMD-SHELL", "antgain health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      start_period: 120s
+      retries: 3
+    labels:
+      - com.centurylinklabs.watchtower.scope=earning-machine
+
+  watchtower:
+    profiles: ["watchtower"]
+    image: nickfedor/watchtower:latest
+    container_name: watchtower-earning-machine
+    restart: always
+    command:
+      - --cleanup
+      - --interval
+      - "43200"
+      - --scope
+      - earning-machine
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  mysterium-data:
+  bitping-data:
+  antgain-data:
