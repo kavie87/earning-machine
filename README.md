@@ -17,7 +17,7 @@ Click an app name to open its signup page.
 | Repocket | Official Docker image `repocket/repocket` |
 | [Mysterium](https://mystnodes.co/?referral_code=842el14MIHkQV0MSyEwPs3iyxZPFsVZpK6OWKgde) | Official Docker image `mysteriumnetwork/myst`, host networking |
 | Bitping | Official Docker image `bitping/bitpingd` |
-| AntGain | Official Docker image `pinors/antgain-cli` |
+| [AntGain](https://link.antgain.app/50IWQKRU) | Official Docker image `pinors/antgain-cli` |
 | [EarnApp](https://earnapp.com/i/HsxU2Bnd) | Official Linux installer, then a browser link to your account |
 | Watchtower | Optional. Updates only containers in this project, every 12 hours |
 
