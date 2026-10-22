@@ -6,17 +6,19 @@ Each app shares this computer's internet connection and pays according to its ow
 
 ## Apps
 
+Click an app name to open its signup page.
+
 | App | How it runs |
 | --- | --- |
-| Honeygain | Official Docker image `honeygain/honeygain` |
-| Pawns | Official Docker image `iproyal/pawns-cli` |
-| PacketStream | Official Docker image `packetstream/psclient` |
-| TraffMonetizer | Official Docker image `traffmonetizer/cli_v2` |
+| [Honeygain](https://join.honeygain.com/SPARE2A1D9) | Official Docker image `honeygain/honeygain` |
+| [Pawns](https://pawns.app/?r=3040658) | Official Docker image `iproyal/pawns-cli` |
+| [PacketStream](https://packetstream.io/?psr=5wim) | Official Docker image `packetstream/psclient` |
+| [TraffMonetizer](https://traffmonetizer.com/?aff=1581720) | Official Docker image `traffmonetizer/cli_v2` |
 | Repocket | Official Docker image `repocket/repocket` |
-| Mysterium | Official Docker image `mysteriumnetwork/myst`, host networking |
+| [Mysterium](https://mystnodes.co/?referral_code=842el14MIHkQV0MSyEwPs3iyxZPFsVZpK6OWKgde) | Official Docker image `mysteriumnetwork/myst`, host networking |
 | Bitping | Official Docker image `bitping/bitpingd` |
 | AntGain | Official Docker image `pinors/antgain-cli` |
-| EarnApp | Official Linux installer, then a browser link to your account |
+| [EarnApp](https://earnapp.com/i/HsxU2Bnd) | Official Linux installer, then a browser link to your account |
 | Watchtower | Optional. Updates only containers in this project, every 12 hours |
 
 EarnApp is installed on the host with the installer published by EarnApp. The setup script downloads that installer, then you accept EarnApp's terms in the installer and open the link it prints.
@@ -55,22 +57,6 @@ Bitping accounts with two-factor authentication need `BITPING_MFA` added to `.en
 ## Secrets
 
 Keep `.env` on the Linux computer. Honeygain's password and the TraffMonetizer token are passed as container arguments, because that is how those official images accept them. Anyone who can run `docker inspect` on this machine can read those two values.
-
-## Signup links
-
-Replace the empty cells with your own referral links before you point people at this repo.
-
-| App | Link |
-| --- | --- |
-| Honeygain | https://join.honeygain.com/SPARE2A1D9 |
-| EarnApp | https://earnapp.com/i/HsxU2Bnd |
-| Pawns | https://pawns.app/?r=3040658 |
-| PacketStream | https://packetstream.io/?psr=5wim |
-| TraffMonetizer | https://traffmonetizer.com/?aff=1581720 |
-| Repocket | |
-| Mysterium | https://mystnodes.co/?referral_code=842el14MIHkQV0MSyEwPs3iyxZPFsVZpK6OWKgde |
-| Bitping | |
-| AntGain | |
 
 ## Useful logs
 
