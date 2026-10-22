@@ -18,6 +18,7 @@ Click an app name to open its signup page.
 | [Mysterium](https://mystnodes.co/?referral_code=842el14MIHkQV0MSyEwPs3iyxZPFsVZpK6OWKgde) | Official Docker image `mysteriumnetwork/myst`, host networking |
 | Bitping | Official Docker image `bitping/bitpingd` |
 | [AntGain](https://link.antgain.app/50IWQKRU) | Official Docker image `pinors/antgain-cli` |
+| [Wipter](https://wipter.com/register?via=1413D63928) | Wipter's own app, installed from their site |
 | [EarnApp](https://earnapp.com/i/HsxU2Bnd) | Official Linux installer, then a browser link to your account |
 | Watchtower | Optional. Updates only containers in this project, every 12 hours |
 
