@@ -68,7 +68,7 @@ Replace the empty cells with your own referral links before you point people at 
 | PacketStream | https://packetstream.io/?psr=5wim |
 | TraffMonetizer | https://traffmonetizer.com/?aff=1581720 |
 | Repocket | |
-| Mysterium | |
+| Mysterium | https://mystnodes.co/?referral_code=842el14MIHkQV0MSyEwPs3iyxZPFsVZpK6OWKgde |
 | Bitping | |
 | AntGain | |
 
